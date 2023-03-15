@@ -1,0 +1,42 @@
+*{
+    margin   : 0;
+    padding  : 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &>*{
+        flex: 0 0 auto;
+    }
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+ul, ol, li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none !important;
+    color: $color-white;
+    &:link{
+        text-decoration: none !important;
+        color: $color-white;
+    }
+    &:hover{
+        text-decoration: none !important;
+        color: $color-white;
+    }
+
+}
+button{
+    padding: 8px;
+}

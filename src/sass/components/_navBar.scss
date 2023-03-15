@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@800&family=Allison&family=Cherry+Swash:wght@400;700&family=Marck+Script&family=Montserrat+Alternates&family=Montserrat:wght@100;200&family=Mr+De+Haviland&family=Pathway+Gothic+One&family=Playfair+Display:wght@900&family=Whisper&display=swap');
+
+#navBar{
+    font-size: $font-size-s;
+    background-color: $color-black;
+    color: $color-white;
+    font-family: 'Cherry Swash';
+    font-style: normal;
+    font-weight: 700;
+    line-height: 64px;
+
+    img{
+        width: 90px;
+    }
+}

@@ -1,0 +1,10 @@
+// main import there
+//utils
+@import "./sass/utils/variables";
+@import "./sass/utils/mixin";
+//base
+@import "./sass/base/base" ;
+//components
+@import "./sass/components/navBar";
+@import "./sass/components/cards";
+
