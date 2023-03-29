@@ -1,0 +1,14 @@
+#spinner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    span{
+        width: 80px !important;
+        height: 80px !important;
+    }
+    div{
+        font-size: $font-size-s !important;
+    }
+
+}

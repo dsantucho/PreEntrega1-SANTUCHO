@@ -8,7 +8,7 @@ export const NavBar = () => {
     <nav className="d-flex col-12" id="navBar">
       <div className="d-flex col-5 align-items-center">
         <img className="p-2 " src={logoCommerce} alt="LogoeComerce"></img>
-        <h1 className="ps-5">LOGO BRAND</h1>
+        <h1 className="ps-5">Pixel Fashion</h1>
       </div>
       <div className="container d-flex col-7 justify-content-end align-items-center">
         <ul>
@@ -16,6 +16,9 @@ export const NavBar = () => {
         </ul>
         <ul>
           <li><a href="www.google.com">For her</a></li>
+        </ul>
+        <ul>
+          <li>Profile</li>
         </ul>
         <ul>
           <li>
