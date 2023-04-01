@@ -1,0 +1,16 @@
+.error-container{
+    background-color: $color-neon-pink;
+    border: 8px solid $color-neon-green;
+
+    #div-alert {
+        //font
+        font-size: $font-size-s;
+        font-family: 'Cherry Swash';
+        font-style: normal;
+    }
+    div{
+        img{
+            width:25%;
+        }
+    }
+}

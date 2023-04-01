@@ -34,25 +34,25 @@ const CardItem = ({ data }) => {
   };
 
   return (
-    <Card sx={{ maxWidth: 345 , minWidth:300 }}>
-      <CardHeader
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title={data.DisplayName}
-      />
+    <Card sx={{ maxWidth: 345, minWidth: 300, minHeight: 375 }}>
       <CardMedia
         component="img"
-        height="194"
-        image={data.DefaultProductImage}
-        alt={data.DisplayName}
+        height="195"
+        image={data.image}
+        alt={data.title}
+      />
+      <CardHeader
+        // action={
+        //   <IconButton aria-label="settings">
+        //     <MoreVertIcon />
+        //   </IconButton>
+        // }
+        title={data.title}
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-         {/* {data.Description} */}
-         {data.OriginalPrice}
+          {/* {data.Description} */}
+          {data.price}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>

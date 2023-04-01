@@ -10,5 +10,47 @@
     font-family: 'Cherry Swash';
     font-style: normal;
     width: 70%;
-
 }
+.card-detail{
+    img{
+        max-width: 400px;
+        max-height: 400px;
+    }
+    
+    .card-body{
+        h2{
+            font-size: $font-size-m;
+            font-family: 'Cherry Swash';
+            font-style: normal;
+            width: 70%;
+        }
+        p{
+            font-size: $font-size-base;
+            font-family: 'Montserrat';
+            font-style: normal;
+        }
+        button{
+            background-color: $color-neon-pink;
+            border: solid $color-neon-pink;
+            border-radius: 0px;
+            height: 45px;
+            font-size: $font-size-base;
+            font-family: 'Montserrat';
+            font-style: normal;
+        }
+    }
+}
+
+// .cards{
+//     //maxWidth: 345 , minWidth:300, minHeight:400
+//     a{
+//         div{
+//             display: flex;
+//             flex-direction: column;
+//             align-content: space-around; 
+//             justify-content: flex-start;
+//         }
+
+//     }
+
+// }

@@ -12,4 +12,50 @@
     img{
         width: 90px;
     }
+    ul{
+        a{
+            text-decoration: none !important;
+            color: $color-white;
+            &:link{
+                text-decoration: none !important;
+                color: $color-white;
+            }
+            &:hover{
+                text-decoration: none !important;
+                color: $color-white;
+            }
+        }
+
+    }
+    .dropdown-menu {
+        font-size: $font-size-s;
+        background-color: $color-black;
+        color: $color-white;
+        font-family: 'Cherry Swash';
+        font-style: normal;
+        font-weight: 700;
+        line-height: 64px;
+        background-color: $color-black;
+        border: none;
+        box-shadow: none;
+        a {
+          color: $color-white !important;
+          &:hover {
+            background-color: $color-white;
+            color: $color-black !important;
+          }
+        }
+      }
+    #dropdown-basic{
+        font-size: $font-size-s;
+        background-color: $color-black;
+        color: $color-white;
+        font-family: 'Cherry Swash';
+        font-style: normal;
+        font-weight: 700;
+        line-height: 64px;
+        background-color: $color-black;
+        border: none;
+        box-shadow: none;
+    }
 }

@@ -1,12 +1,14 @@
 import CardItem from "./CardItem";
+import {Link} from "react-router-dom";
 
-const CardList = (forever) => {
+const CardList = (products) => {
   return (
-    //TODO Armar Card Ropa
     <div className='d-flex m-5 flex-wrap justify-content-between'>
-    {forever.data.map((product) => (
-      <div key={product.ItemCode} className = "d-fex mb-5">
-        <CardItem data={product} />
+    {products.data.map((product) => (
+      <div key={product.id} className = "card d-fex mb-5">
+        <Link to = {`/detail/${product.id}`}>
+          <CardItem data={product}/>
+        </Link>
       </div>
     ))}
     </div>

@@ -2,10 +2,12 @@
 //utils
 @import "./sass/utils/variables";
 @import "./sass/utils/mixin";
+@import "./sass/utils/typography";
 //base
 @import "./sass/base/base" ;
 //components
 @import "./sass/components/navBar";
 @import "./sass/components/cards";
 @import "./sass/components/spinner";
+@import "./sass/components/errorContainer";
 
