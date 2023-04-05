@@ -40,17 +40,37 @@
         }
     }
 }
+.card{
+    a{
 
-// .cards{
-//     //maxWidth: 345 , minWidth:300, minHeight:400
-//     a{
-//         div{
-//             display: flex;
-//             flex-direction: column;
-//             align-content: space-around; 
-//             justify-content: flex-start;
-//         }
+        display: block;
+        width: 100%;
+        height: 100%;
+    
+        }
+}
+.home-cards-list{
+    font-size: $font-size-base;
+    font-family: 'Montserrat';
+    max-width: 345px !important;
+    min-width: 340px !important;
+    min-height: 375px !important;
+    box-shadow: none !important;
+    width: 100%;
+    height: 100%;
+    .button-cards{
+        background-color: $color-neon-pink;
+        border: solid $color-neon-pink;
+        border-radius: 0px;
+        height: 45px;
+        width: 100%;
+        font-size: $font-size-base;
+        font-family: 'Montserrat';
+        color: white;
+        &:hover{
+            color: black;
+            background-color: white;
+        }
+    }
 
-//     }
-
-// }
+}
