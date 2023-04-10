@@ -9,7 +9,7 @@ import { ItemsContext } from "../contexts/ItemsContext";
 
 
 const CardItem = ({ data }) => {
-  const { items, setItems, addItem } = useContext(ItemsContext);
+  const {methods} = useContext(ItemsContext);
   return (
     <Card className="home-cards-list d-flex flex-column justify-content-between align-self-end">
       <Link to={`/detail/${data.id}`}>
@@ -22,14 +22,19 @@ const CardItem = ({ data }) => {
         <div>
           <h3 className="cards-typo m-4">{data.title}</h3>
         </div>
-
         <CardContent>
-          <p>{/* {data.Description} */}</p>
+          <p>Price: </p>
           <p>$ {data.price}</p>
         </CardContent>
       </Link>
+      <div>
+            <p>Quantity:</p>
+            <button> + </button>
+            <span> {data.quantity} </span>
+            <button> - </button>
+          </div>
       <div className="d-flex justify-content-center align-item-end ">
-        <button onClick={() => addItem([data])} className="button-cards">
+        <button onClick={() => methods.dispatch({type:'ADD', payload: data})} className="button-cards">
           ADD TO CART
         </button>
       </div>
