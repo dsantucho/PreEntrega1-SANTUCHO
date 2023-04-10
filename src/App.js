@@ -16,6 +16,7 @@ import ForHim from "./pages/ForHim";
 import ItemDetail from "./pages/ItemDetail";
 import ErrorPage from "./pages/ErrorPage";
 import Others from "./pages/Others";
+import Cart from "./pages/Cart";
 
 //Contexts
 import { ItemsProvider } from "./contexts/ItemsContext"; 
@@ -33,6 +34,7 @@ export const App = () => {
           <Route path="/category/forHim" element={<ForHim/>}/>
           <Route path="/category/others" element={<Others/>}/>
           <Route path="/detail/:id" element={<ItemDetail/>}/>
+          <Route path="/cart" element={<Cart/>}/>
           <Route path="*" element={<ErrorPage/>}/>
         </Routes>
       </Router>
