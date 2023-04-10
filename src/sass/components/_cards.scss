@@ -41,13 +41,14 @@
     }
 }
 .card{
-    a{
 
-        display: block;
-        width: 100%;
-        height: 100%;
+    // a{
+
+    //     display: block;
+    //     width: 100%;
+    //     height: 100%;
     
-        }
+    //     }
 }
 .home-cards-list{
     font-size: $font-size-base;
@@ -72,5 +73,12 @@
             background-color: white;
         }
     }
+    a{
+
+        display: block;
+        width: 100%;
+        height: 100%;
+    
+        }
 
 }

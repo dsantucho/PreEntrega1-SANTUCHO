@@ -3,6 +3,9 @@ import Badge, { BadgeProps } from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+//context
+import { useContext } from 'react';
+import { ItemsContext } from '../contexts/ItemsContext';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -14,10 +17,11 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 }));
 
 const CartWidget = () => {
+    const {items,returnLenthg} = useContext(ItemsContext);
 return (
     <div id='cartWidget' className='pe-5'>
     <IconButton aria-label="cart">
-        <StyledBadge badgeContent={1} color="secondary">
+        <StyledBadge badgeContent={items.lenthg} color="secondary">
             <ShoppingCartIcon sx={{color:'white', fontSize:40}}/>
         </StyledBadge>
     </IconButton>

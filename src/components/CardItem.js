@@ -1,61 +1,39 @@
 import * as React from "react";
-import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
-import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
-import CardActions from "@mui/material/CardActions";
-import Collapse from "@mui/material/Collapse";
-import Avatar from "@mui/material/Avatar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import { red } from "@mui/material/colors";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import ShareIcon from "@mui/icons-material/Share";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import Button from '@mui/material/Button';
+import { Link } from "react-router-dom";
+//context
+import { useContext } from "react";
+import { ItemsContext } from "../contexts/ItemsContext";
 
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
-  marginLeft: "auto",
-  transition: theme.transitions.create("transform", {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
 
 const CardItem = ({ data }) => {
-  const [expanded, setExpanded] = React.useState(false);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
-
+  const { items, setItems, addItem } = useContext(ItemsContext);
   return (
-    <Card  className="home-cards-list d-flex flex-column justify-content-between align-self-end">
-      <CardMedia
-        component="img"
-        height="195"
-        image={data.image}
-        alt={data.title}
-      />
-      <div>
-        <h3 className="cards-typo m-4">{data.title}</h3>
-      </div>
-      
-      <CardContent>
-        <p>{/* {data.Description} */}</p>
-        <p>$ {data.price}</p>
-      </CardContent>
-      <div className="d-flex justify-content-center align-item-end ">
-        <button className="button-cards">ADD TO CART</button>
-      </div>
-      
-    </Card>
+    <Card className="home-cards-list d-flex flex-column justify-content-between align-self-end">
+      <Link to={`/detail/${data.id}`}>
+        <CardMedia
+          component="img"
+          height="195"
+          image={data.image}
+          alt={data.title}
+        />
+        <div>
+          <h3 className="cards-typo m-4">{data.title}</h3>
+        </div>
 
+        <CardContent>
+          <p>{/* {data.Description} */}</p>
+          <p>$ {data.price}</p>
+        </CardContent>
+      </Link>
+      <div className="d-flex justify-content-center align-item-end ">
+        <button onClick={() => addItem([data])} className="button-cards">
+          ADD TO CART
+        </button>
+      </div>
+    </Card>
   );
 };
 export default CardItem;

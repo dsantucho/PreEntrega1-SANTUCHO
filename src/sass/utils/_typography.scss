@@ -6,4 +6,17 @@ h2{
 
 .cards-typo{
     font-family: 'Montserrat' !important;
+    color: black !important;
+}
+
+.home-cards-list{
+    a{
+        text-decoration: none !important;
+        div{
+            p{
+                font-family: 'Montserrat' !important;
+                color: black !important; 
+            }
+        }
+    }
 }
