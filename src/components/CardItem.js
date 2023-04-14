@@ -16,7 +16,7 @@ const CardItem = ({ data }) => {
         <CardMedia
           component="img"
           height="195"
-          image={data.image}
+          image={data.img}
           alt={data.title}
         />
         <div>
