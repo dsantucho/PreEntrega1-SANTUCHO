@@ -1,7 +1,7 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
+//ES EL CARD DANDO LA BIENVENIDA
 const ItemListContainer = (props) => {
     return (
         <div className='container p-3 mt-4' id='itemWelcomeContainer'>

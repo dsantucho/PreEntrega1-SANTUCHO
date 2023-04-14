@@ -16,22 +16,29 @@ import ForHim from "./pages/ForHim";
 import ItemDetail from "./pages/ItemDetail";
 import ErrorPage from "./pages/ErrorPage";
 import Others from "./pages/Others";
+import Cart from "./pages/Cart";
+
+//Contexts
+import { ItemsProvider } from "./contexts/ItemsContext"; 
 
 export const App = () => {
   return (
-    <Router>
-      <div>
-        <NavBar />
-      </div>
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/category/forHer" element={<ForHer/>}/>
-        <Route path="/category/forHim" element={<ForHim/>}/>
-        <Route path="/category/others" element={<Others/>}/>
-        <Route path="/detail/:id" element={<ItemDetail/>}/>
-        <Route path="*" element={<ErrorPage/>}/>
-      </Routes>
-    </Router>
+    <ItemsProvider>
+      <Router>
+        <div>
+          <NavBar />
+        </div>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/category/forHer" element={<ForHer/>}/>
+          <Route path="/category/forHim" element={<ForHim/>}/>
+          <Route path="/category/others" element={<Others/>}/>
+          <Route path="/detail/:id" element={<ItemDetail/>}/>
+          <Route path="/cart" element={<Cart/>}/>
+          <Route path="*" element={<ErrorPage/>}/>
+        </Routes>
+      </Router>
+    </ItemsProvider>
   );
 };
 
