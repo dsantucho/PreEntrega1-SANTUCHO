@@ -80,5 +80,22 @@
         height: 100%;
     
         }
+    .div-quantity{
+        span{
 
+        }
+        button{
+            &.button-quantity{
+                background-color: $color-neon-pink;
+                border: solid $color-neon-pink;
+                border-radius: 0px;
+                //height: 30px;
+                width: 25%;
+                font-size: $font-size-base;
+                font-family: 'Montserrat';
+                color: white;
+                padding: 0px;
+            }
+        }
+    }
 }
