@@ -34,18 +34,6 @@ const Home = () => {
            setIsLoading(false); //simulo para ver el spinner
     }, 1000);
   },[]);
-
-    // useEffect(() => {
-    //   setIsLoading(true);
-    //   //fetch de data
-    //   fetch('https://fakestoreapi.com/products')
-    //         .then(res=>res.json())
-    //         .then(json=>setProducts(json))
-    //   setTimeout(() => {
-    //     setIsLoading(false); //simulo para ver el spinner
-    //   }, 1000);
-    // }, []);
-    // console.log(products)
   return (
     <div>
     <ItemListContainer text="Welcome to our e-commerce website! We are thrilled to offer you a one-stop-shop for all your gaming fashion needs. Our team has carefully curated a collection of stylish and comfortable clothing items that are designed specifically for gamers." />
