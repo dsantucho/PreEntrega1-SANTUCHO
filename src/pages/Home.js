@@ -13,7 +13,6 @@ const Home = () => {
   //spinner
   const [isLoading, setIsLoading] = useState(false);
   //state
-  const [products, setProducts] = useState([]); //espera Array
   const [items, setItems] = useState([]); //espera Array
   //firebase
   const q = query(collection(db,"items")); // es la query
