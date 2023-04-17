@@ -7,7 +7,7 @@ import Spinner from "../components/Spinner";
 
 //FIREBASE
 import {db} from "../firebase/firebaseConfig";
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { collection, query, getDocs } from "firebase/firestore";
 
 const Home = () => {
   //spinner
