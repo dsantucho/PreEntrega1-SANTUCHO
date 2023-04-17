@@ -3,6 +3,9 @@ import React, {useState, useEffect} from 'react';
 import {collection, addDoc} from "firebase/firestore";
 import {db} from "../firebase/firebaseConfig";
 
+//components
+import Success from './Success';
+
 const initialForm = {
     name:'',
     lastName:'',
@@ -14,7 +17,7 @@ const initialForm = {
 const FormCart = () => {
     //guardar data del form
     const [values, setValues] = useState(initialForm)
-    //guardar la purchase
+    //guardar el id de purchase para poder desplegar el mensaje de exito
     const [pruchaseID, setPurchaseID] = useState('');
 
     //eventos para tomar los valores del form
@@ -28,6 +31,7 @@ const FormCart = () => {
         const docRef = await addDoc(collection(db, "purchases"),{values});
         console.log("Document written with id: ", docRef.id);
         setValues(initialForm);
+        setPurchaseID(docRef.id);
     }
   return (
     <div className='container mt-5'>
@@ -40,6 +44,7 @@ const FormCart = () => {
             <TextField placeholder='Ccv' name='ccv' value={values.ccv} onChange={onChange}/>
             <button className='btnForm' type='submit'>Buy</button>
         </form>
+        {pruchaseID.length ? <Success/>:null}
     </div>
   )
 }
