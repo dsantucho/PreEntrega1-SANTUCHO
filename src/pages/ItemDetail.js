@@ -24,7 +24,7 @@ const ItemDetail = () => {
       setProductsDetail(docs);
     }
     getItems();
-  },[]);
+  },[id]); //reaccionar cuando el id cambie
   console.log(productsDetail)
 
   return (
