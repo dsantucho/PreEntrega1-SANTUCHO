@@ -7,8 +7,6 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 //components
 import CardList from '../components/CardList';
 
-
-
 const Categories = () => {
     let {category} = useParams();  
     //state
