@@ -18,7 +18,7 @@ const FormCart = () => {
     //guardar data del form
     const [values, setValues] = useState(initialForm)
     //guardar el id de purchase para poder desplegar el mensaje de exito
-    const [pruchaseID, setPurchaseID] = useState('');
+    const [purchaseID, setPurchaseID] = useState('');
 
     //eventos para tomar los valores del form
     const onChange = (e)=>{
@@ -34,9 +34,9 @@ const FormCart = () => {
         setPurchaseID(docRef.id);
     }
   return (
-    <div className='container mt-5'>
-        <h3> Continue Purchase </h3>
-        <form className='formContainer' onSubmit={onSubmit}>
+    <div className='container mt-5 d-flex flex-column'>
+        <h3 className='d-flex align-items-center justify-content-center'> Continue Purchase </h3>
+        <form className='formContainer d-flex flex-column' onSubmit={onSubmit}>
             <TextField placeholder='name' name='name' value={values.name} onChange={onChange}/>
             <TextField placeholder='last name' name='lastName' value={values.lastName} onChange={onChange}/>
             <TextField placeholder='Address' name='address' value={values.address} onChange={onChange}/>
@@ -44,7 +44,8 @@ const FormCart = () => {
             <TextField placeholder='Ccv' name='ccv' value={values.ccv} onChange={onChange}/>
             <button className='btnForm' type='submit'>Buy</button>
         </form>
-        {pruchaseID.length ? <Success/>:null}
+
+        {purchaseID.length ? <Success purchaseID={purchaseID}/>:null}
     </div>
   )
 }
