@@ -14,19 +14,24 @@ export const ItemsContext = createContext();
     
 export const ItemsProvider = ({children}) =>{
     const reducer = (state,action)=>{
-        switch(action.type){
+        switch(action.type){  
             case 'ADD': 
                 //evitar el clicking en 1 item y que llene de basura el []
-                const aux = state.filter((item)=> action.payload.id == item.id); //el nuevo item ya existe en el array?
+                const aux = state.filter((item)=> action.payload.id === item.id); //el nuevo item ya existe en el array?
                 if(aux.length>0){
                     return state;
                 }else{
                     return [...state,action.payload];
-                }
-                
-
+                }               
+            case 'INCREASE':
+                break;
+            case 'DECREASE':
+                break;
+            case 'REMOVE':
+                break;    
             default: return state;
         }
+        
     }
     const [state, dispatch]=useReducer(reducer,[])
 
