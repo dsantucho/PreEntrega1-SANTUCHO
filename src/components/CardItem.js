@@ -26,20 +26,19 @@ const CardItem = ({ data }) => {
           <p> $ {data.price}</p>
         </div>
       </Link>
-      <div className="div-quantity ms-2">
+      {/* <div className="div-quantity ms-2">
         <p>Quantity:</p>
         <div className=" d-flex justify-content-around mb-4">
-          <button className="d-flex button-quantity justify-content-center align-items-center">
-            {" "}
-            +{" "}
-          </button>
-          <span className="p-2"> {data.quantity} </span>
-          <button className="d-flex button-quantity justify-content-center align-items-center">
+        <button className="d-flex button-quantity justify-content-center align-items-center">
             {" "}
             -{" "}
           </button>
+          <span className="p-2"> {data.quantity} </span>
+          <button onClick={()=>methods.dispatch({type:'INCREASE',payload:data})} className="d-flex button-quantity justify-content-center align-items-center">
+          +
+          </button>
         </div>
-      </div>
+      </div> */}
       <div className="d-flex justify-content-center align-item-end ">
         <button
           onClick={() => methods.dispatch({ type: "ADD", payload: data })}

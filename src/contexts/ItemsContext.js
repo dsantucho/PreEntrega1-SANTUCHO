@@ -24,11 +24,27 @@ export const ItemsProvider = ({children}) =>{
                     return [...state,action.payload];
                 }               
             case 'INCREASE':
-                break;
+                const itemIncrease = state.map((item)=>{
+                    if(item.id === action.payload.id){
+                       return {...item, quantity: item.quantity+1} //tengo el id del item y le sumo
+                    }else{
+                        return item;
+                    }
+                });
+                return itemIncrease;
             case 'DECREASE':
-                break;
+                const itemDecrease = state.map((item)=>{
+                    if(item.id === action.payload.id){
+                       return {...item, quantity: item.quantity-1} //tengo el id del item y le sumo
+                    }else{
+                        return item;
+                    }
+                });
+                return itemDecrease;
             case 'REMOVE':
-                break;    
+                const itemRemoved = state.filter((item)=>item.id !== action.payload.id);
+                return itemRemoved;
+  
             default: return state;
         }
         

@@ -9,6 +9,9 @@ import Success from './Success';
 const initialForm = {
     name:'',
     lastName:'',
+    phone:'',
+    email:'',
+    email2:'',
     card:'',
     ccv:'',
     address:''
@@ -39,6 +42,9 @@ const FormCart = () => {
         <form className='formContainer d-flex flex-column' onSubmit={onSubmit}>
             <TextField placeholder='name' name='name' value={values.name} onChange={onChange}/>
             <TextField placeholder='last name' name='lastName' value={values.lastName} onChange={onChange}/>
+            <TextField placeholder='Celphone' name='phone' value={values.phone} onChange={onChange}/>
+            <TextField placeholder='Email' name='email' value={values.address} onChange={onChange}/>
+            <TextField placeholder='Repeat Email' name='email2' value={values.email2} onChange={onChange}/>
             <TextField placeholder='Address' name='address' value={values.address} onChange={onChange}/>
             <TextField placeholder='Card' name='card' value={values.card} onChange={onChange}/>
             <TextField placeholder='Ccv' name='ccv' value={values.ccv} onChange={onChange}/>
