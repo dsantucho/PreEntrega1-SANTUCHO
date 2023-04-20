@@ -25,7 +25,6 @@ const ItemDetail = () => {
     }
     getItems();
   },[id]); //reaccionar cuando el id cambie
-  console.log(productsDetail)
 
   return (
     <div className="container d-flex flex-column justify-content-center align-items-center p-5">
