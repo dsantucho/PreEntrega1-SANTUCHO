@@ -83,7 +83,7 @@ const Cart = () => {
           </Table>
           </TableContainer>
           <div><p>Count Items:{countItems}</p></div>
-          <div><p>Total: ${total}</p></div>
+          <div><p>Total: ${total.toFixed(2)}</p></div>
           </div>
           <div id='form'>
             <FormCart/>
