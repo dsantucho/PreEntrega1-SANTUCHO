@@ -34,7 +34,7 @@ const Home = () => {
     }, 1000);
   },[]);
   return (
-    <div>
+    <div className="nav-fix">
     <ItemListContainer text="Welcome to our e-commerce website! We are thrilled to offer you a one-stop-shop for all your gaming fashion needs. Our team has carefully curated a collection of stylish and comfortable clothing items that are designed specifically for gamers." />
     {isLoading ? <Spinner /> : <CardList data={items} />}
   </div>

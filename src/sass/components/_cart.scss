@@ -1,0 +1,32 @@
+#cart{
+    padding-top: 120px;
+    div{
+        .card-empty{
+            img{
+                max-width: 50%;
+            }
+        }
+        &#actions-cart{
+            a{
+            button{
+                &.btn-continue-buy{
+                    background-color: $color-neon-pink;
+                    border: solid $color-neon-pink;
+                    border-radius: 0px;
+                    height: 55px;
+                    width: 100%;
+                    font-size: $font-size-s;
+                    font-family: 'Montserrat';
+                    color: white;
+                    &:hover{
+                        color: black;
+                        background-color: white;
+                    }
+                }
+            }  
+            }
+
+        }
+    }
+   
+}

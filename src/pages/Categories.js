@@ -26,7 +26,7 @@ const Categories = () => {
     getItems();
     },[category]);
     return (
-        <div className='container'>
+        <div className='container nav-fix'>
             <h2 className='d-flex justify-content-center mt-5'>Category =  {category}</h2>
             <CardList data={itemsByCategory}/>
         </div>
