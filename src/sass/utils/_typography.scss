@@ -27,3 +27,28 @@ h2{
     color: black;
     font-size: $font-size-s;
 }
+//table
+div#table{
+    font-family: 'Montserrat';
+    color: black;
+    font-size: 1.3rem;
+
+}
+
+//form
+#form-detail{
+    h3{
+        font-family: 'Montserrat';
+        color: black;
+        font-size: $font-size-s;
+    }
+    form{
+        &.formContainer{
+            font-size: $font-size-base;
+
+            input{
+                font-size: 1.3rem;
+            }
+        }
+    }
+}

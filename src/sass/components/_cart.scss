@@ -1,5 +1,5 @@
 #cart{
-    padding-top: 120px;
+    padding-top: 130px;
     div{
         .card-empty{
             img{
@@ -27,6 +27,48 @@
             }
 
         }
+        &#div-table-form{
+            width: 100%;
+            div{
+                .btn-table{
+                    background-color: $color-neon-pink;
+                    border: solid $color-neon-pink;
+                    border-radius: 0px;
+                    font-size: 1.4rem;
+                    font-family: 'Montserrat';
+                    color: white;
+                }
+            }
+        }
     }
-   
+}
+
+#form-detail{
+    form{
+        div{
+            &.personal-info{
+                width: 45%;
+            }
+        }
+
+        button{
+            background-color: $color-neon-pink;
+            border: solid $color-neon-pink;
+            border-radius: 0px;
+            font-size: $font-size-s;
+            font-family: 'Montserrat';
+            color: white;
+            &:hover{
+                color: black;
+                background-color: white;
+            }
+        }
+    }
+}
+
+button{
+    &.disabled{
+        background-color: lightgrey !important; 
+        color: white !important
+    }
 }
