@@ -120,10 +120,10 @@ const Cart = () => {
                 </Table>
               </TableContainer>
               <div>
-                <p>Count Items:{countItems}</p>
+                <p>Count Items:{" "}{countItems}</p>
               </div>
               <div>
-                <p>Total: ${total.toFixed(2)}</p>
+                <p>Total: ${" "}{total.toFixed(2)}</p>
               </div>
             </div>
             <div id="form" className="col-4">
