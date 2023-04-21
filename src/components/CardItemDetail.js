@@ -1,5 +1,4 @@
-import { render } from '@testing-library/react';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 //context:
 import { ItemsContext } from '../contexts/ItemsContext';
 
