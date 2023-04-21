@@ -123,7 +123,7 @@
 
 .added-to-cart{
     border: solid $color-neon-green;
-    .button-cards{
+    .button-cards, &.button-cards{
         background-color: $color-neon-green;
         border: solid $color-neon-green;
         border-radius: 0px;

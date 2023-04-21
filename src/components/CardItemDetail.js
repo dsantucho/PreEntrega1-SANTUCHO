@@ -6,7 +6,7 @@ import { ItemsContext } from '../contexts/ItemsContext';
 const CardItemDetail = ({ data }) => {
   const {methods} = useContext(ItemsContext);
   const [currentQuantity,setCurrentQuantity] = useState(1)// use useState to store data
-
+  const [isAdded, setIsAdded] = useState(false)
   //voy a hacer 2 funciones increase y decrease modificando el valor de quantity
   //estas dos funciones las voy a pasar en el 'onClick' 
   const handleIncrease = () => {
@@ -18,10 +18,18 @@ const CardItemDetail = ({ data }) => {
       setCurrentQuantity(currentQuantity-1);
     }
   };
+  //handler add to cart
   const addToCart = ()=>{
     const auxdata = {...data, quantity: currentQuantity}
-    methods.dispatch({ type: "ADD", payload: auxdata })
+    methods.dispatch({ type: "ADD", payload: auxdata });
+    setIsAdded(true);
   }
+  // handler remove to cart
+  const removeToCart = () => {
+    const auxdata = {...data, quantity: currentQuantity}
+    methods.dispatch({ type: "REMOVE", payload: auxdata });
+    setIsAdded(false);
+  };
   return (
     <div className="container card-detail nav-fix">
       <div className="d-flex justify-content-between">
@@ -39,7 +47,8 @@ const CardItemDetail = ({ data }) => {
               <span className="p-3"> {currentQuantity} </span>
               <button onClick={handleIncrease} className="card-btn-detail-quantity d-flex justify-content-center align-items-center">+</button>
             </div>
-            <button  onClick={addToCart} className="button-cards-detail">Add to Cart</button>
+            {isAdded?(<button  onClick={removeToCart} className={`button-cards-detail ${isAdded? "added-to-cart button-cards":""}`}>Remove</button>):(<button  onClick={addToCart} className="button-cards-detail">Add to Cart</button>)}
+            
           </div>
         </div>
       </div>
