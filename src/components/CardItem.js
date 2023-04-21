@@ -3,13 +3,25 @@ import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import { Link } from "react-router-dom";
 //context
-import { useContext } from "react";
+import { useContext,useState } from "react";
 import { ItemsContext } from "../contexts/ItemsContext";
 
 const CardItem = ({ data }) => {
   const { methods } = useContext(ItemsContext);
+  const [isAdded, setIsAdded] = useState(false);
+
+  const handleAddToCart = () => {
+    methods.dispatch({ type: "ADD", payload: data });
+    setIsAdded(true);
+  };
+
+  const handleRemoveFromCart = () => {
+    methods.dispatch({ type: "REMOVE", payload: data });
+    setIsAdded(false);
+  };
   return (
-    <Card className="home-cards-list d-flex flex-column justify-content-between align-self-end">
+    <Card className={`home-cards-list d-flex flex-column justify-content-between align-self-end ${
+      isAdded ? "added-to-cart" : ""}`}>
       <Link to={`/detail/${data.id}`}>
         <CardMedia
           component="img"
@@ -26,26 +38,16 @@ const CardItem = ({ data }) => {
           <p> $ {data.price}</p>
         </div>
       </Link>
-      {/* <div className="div-quantity ms-2">
-        <p>Quantity:</p>
-        <div className=" d-flex justify-content-around mb-4">
-        <button className="d-flex button-quantity justify-content-center align-items-center">
-            {" "}
-            -{" "}
-          </button>
-          <span className="p-2"> {data.quantity} </span>
-          <button onClick={()=>methods.dispatch({type:'INCREASE',payload:data})} className="d-flex button-quantity justify-content-center align-items-center">
-          +
-          </button>
-        </div>
-      </div> */}
       <div className="d-flex justify-content-center align-item-end ">
-        <button
-          onClick={() => methods.dispatch({ type: "ADD", payload: data })}
-          className="button-cards"
-        >
-          ADD TO CART
-        </button>
+      {isAdded ? (
+          <button onClick={handleRemoveFromCart} className="button-cards added">
+            REMOVE ITEM
+          </button>
+        ) : (
+          <button onClick={handleAddToCart} className="button-cards">
+            ADD TO CART
+          </button>
+        )}
       </div>
     </Card>
   );

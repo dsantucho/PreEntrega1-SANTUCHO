@@ -121,4 +121,17 @@
     }
 }
 
+.added-to-cart{
+    border: solid $color-neon-green;
+    .button-cards{
+        background-color: $color-neon-green;
+        border: solid $color-neon-green;
+        border-radius: 0px;
+        height: 45px;
+        width: 100%;
+        font-size: $font-size-base;
+        font-family: 'Montserrat';
+        color: black;
+    }
+}
 
