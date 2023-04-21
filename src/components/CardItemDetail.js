@@ -30,15 +30,15 @@ const CardItemDetail = ({ data }) => {
           <img src={data.img} alt={data.title} className="img-thumbnail" />
         </div>
         <div className="col-6 d-flex">
-          <div className="card-body-detail card-detail">
+          <div className="card-body-detail">
             <h2>{data.title}</h2>
             <p>{data.description}</p>
             <p>Category: {data.category}</p>
             <p>Price: ${data.price}</p>
-            <div className='d-flex'>
-              <button className="d-flex justify-content-center align-items-center" onClick={handleDecrease}>-</button>
+            <div className='d-flex mb-5 '>
+              <button className={`card-btn-detail-quantity d-flex justify-content-center align-items-center ${currentQuantity === 1 ? "disabled" : ""}`} onClick={handleDecrease}>-</button>
               <span className="p-3"> {currentQuantity} </span>
-              <button onClick={handleIncrease} className="d-flex justify-content-center align-items-center">+</button>
+              <button onClick={handleIncrease} className="card-btn-detail-quantity d-flex justify-content-center align-items-center">+</button>
             </div>
             <button  onClick={addToCart} className="button-cards-detail">Add to Cart</button>
           </div>
