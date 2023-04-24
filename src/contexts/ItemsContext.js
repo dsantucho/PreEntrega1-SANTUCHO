@@ -44,14 +44,31 @@ export const ItemsProvider = ({children}) =>{
             case 'REMOVE':
                 const itemRemoved = state.filter((item)=>item.id !== action.payload.id);
                 return itemRemoved;
-  
+            case 'CLEAN':
+                return [];
             default: return state;
-        }
-        
+        }    
     }
-    const [state, dispatch]=useReducer(reducer,[])
 
-    const methods={state,dispatch}; //pongo todos los metodos en 1 arr
+    const submittedReducer = (state, action) => {
+        switch (action.type) {
+          case "SUBMIT":
+            console.log('enter to SUBMIT Context')
+            return { submitted: true, purchaseID: action.payload.purchaseID };
+          case "RESET":
+            return { submitted: false, purchaseID: "" };
+          default:
+            return state;
+        }
+      };
+
+    const [state, dispatch]=useReducer(reducer,[])
+    const [submittedState, submittedDispatch] = useReducer(submittedReducer, {
+        submitted: false,
+        purchaseID: "",
+      });
+
+    const methods={state,dispatch,submittedState,submittedDispatch}; //pongo todos los metodos en 1 arr
     return(
         <ItemsContext.Provider value = {{methods}}>{children}</ItemsContext.Provider>
     )

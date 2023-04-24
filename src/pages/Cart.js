@@ -19,6 +19,7 @@ import ContinueBuy from "../img/continue-buy.jpg";
 const Cart = () => {
   //methods tiene state y dispatch
   const { methods } = useContext(ItemsContext);
+
   //usar reduce para calcular el total
   const total = methods.state.reduce((total, item) => {
     return total + item.price * item.quantity;
@@ -46,6 +47,7 @@ const Cart = () => {
         {methods.state.length > 0 ? (
           <>
             <div className="col-7">
+              {methods.submittedState.submitted ? (<div className="mt-5">Thank you for your purchase!</div>):(
               <TableContainer component={Paper} className=" mt-5" >
                 <Table sx={{ minWidth: 350 }} aria-label="simple table">
                   <TableHead>
@@ -119,6 +121,7 @@ const Cart = () => {
                   </TableBody>
                 </Table>
               </TableContainer>
+              )}
               <div>
                 <p>Count Items:{" "}{countItems}</p>
               </div>
@@ -127,14 +130,14 @@ const Cart = () => {
               </div>
             </div>
             <div id="form" className="col-4">
-              <FormCart />
+              <FormCart data={{total, countItems}}/>
             </div>
           </>
         ) : (
           <div className="card-empty d-flex justify-content-center mb-5">
             <img
               src={ContinueBuy}
-              alt="continue-buy-photo"
+              alt="continue-buy"
               className="img-fluid"
             />
           </div>
