@@ -50,9 +50,6 @@ const FormCart = ({ data }) => {
         methods.submittedDispatch({ type: "SUBMIT", payload: { submitted: submitted, purchaseID:docRef.id} });
         resetForm();
     };
-    console.log(methods.submittedState.submitted);
-    console.log(methods.submittedState.purchaseID);
-    console.log(methods.submittedDispatch)
     return (
             <>{submitted? 
                 (
