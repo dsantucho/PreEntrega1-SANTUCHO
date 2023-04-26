@@ -18,12 +18,16 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 }));
 
 const CartWidget = () => {
-  const { methods} = useContext(ItemsContext);
+  const { methods } = useContext(ItemsContext);
   return (
     <div id="cartWidget" className="pe-5">
       <Link to={`/cart`}>
         <IconButton aria-label="cart">
-          <StyledBadge badgeContent={methods.state.length} color="secondary">
+          <StyledBadge 
+            badgeContent={
+              methods.submittedState.submitted ? (0):(methods.state.length)
+            } 
+            color="secondary">
             <ShoppingCartIcon sx={{ color: "white", fontSize: 40 }} />
           </StyledBadge>
         </IconButton>
