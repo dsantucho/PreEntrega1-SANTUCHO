@@ -38,9 +38,7 @@ export const NavBar = () => {
         </ul>
 
         <ul>
-          <Link>
             <CartWidget />
-          </Link>
         </ul>
       </div>
     </nav>
