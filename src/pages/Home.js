@@ -35,9 +35,14 @@ const Home = () => {
   },[]);
   return (
     <div className="nav-fix">
-    <ItemListContainer text="Welcome to our e-commerce website! We are thrilled to offer you a one-stop-shop for all your gaming fashion needs. Our team has carefully curated a collection of stylish and comfortable clothing items that are designed specifically for gamers." />
-    {isLoading ? <Spinner /> : <CardList data={items} />}
-  </div>
+      <ItemListContainer 
+        text={
+          `We are excited to provide you with a wide range of stylish and comfortable clothing options for women, men, and babies. 
+          Our collection is carefully curated to ensure that we offer the latest trends in fashion while prioritizing comfort. Whether you're looking for the perfect outfit for a night out or something cozy to wear at home, we have you covered. Browse through our selection and discover your new favorite wardrobe pieces today!`
+          } 
+      />
+      {isLoading ? <Spinner /> : <CardList data={items} />}
+    </div>
   )
 }
 
