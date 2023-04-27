@@ -28,22 +28,24 @@ const Login = () => {
     };
   
     return (
-      <div className="login">
-        <form onSubmit={handleLogin}>
-          <input
-            type="email"
-            placeholder="email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button type="submit">Login</button>
-          {error && <span>Wrong email or password!</span>}
-        </form>
-      </div>
+        <div className="login">
+            <form onSubmit={handleLogin}>
+                <h3>Email:</h3>
+                <input
+                    type="email"
+                    placeholder="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+                <h3>Password:</h3>
+                <input
+                    type="password"
+                    placeholder="password"
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+                <button type="submit">Login</button>
+                {error && <span>Wrong email or password!</span>}
+            </form>
+        </div>
     );
   };
   
