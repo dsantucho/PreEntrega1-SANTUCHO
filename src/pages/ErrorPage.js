@@ -10,7 +10,7 @@ const ErrorPage = () => {
           <Alert severity='error' id='div-alert' className='d-inline-flex justify-content-center align-items-center m-5'>Page not found | 404</Alert>
         </div>
         <div className='d-inline-flex justify-content-center'>
-          <img src={errorImg} class="img-fluid" alt="error"/>
+          <img src={errorImg} className="img-fluid" alt="error"/>
         </div>
       </div> 
   )
