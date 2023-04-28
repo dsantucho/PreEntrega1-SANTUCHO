@@ -46,3 +46,18 @@
       }
     }
 }
+.ul-logout{
+  display: flex;
+  justify-content: center;
+    .btn-logout{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2px;
+      background-color: $color-neon-pink;
+      border: solid $color-neon-pink;
+      border-radius: 0px;
+      height: 50px;
+      width: 100%;
+  }
+}

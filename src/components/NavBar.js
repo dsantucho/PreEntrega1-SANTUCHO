@@ -27,8 +27,8 @@ export const NavBar = () => {
       </div>
       {currentUser? (
       <div className="container d-flex col-7 justify-content-end align-items-center">
-        <ul>
-          <button onClick={handlerLogout}>Logout</button>
+        <ul className="ul-logout">
+          <button className="btn-logout" onClick={handlerLogout}>Logout</button>
         </ul>
         <ul>
           <Link to="/">Home</Link>
