@@ -56,8 +56,8 @@ export const NavBar = () => {
         </ul>
       </div>):(
       <div className="container d-flex col-7 justify-content-end align-items-center">
-        <ul>
-          <Link to="/*">Sign in</Link>
+        <ul className="pe-5">
+          <Link to="/*">Sign up</Link>
         </ul>
       </div>)}
 

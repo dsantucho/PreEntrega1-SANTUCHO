@@ -28,7 +28,8 @@ const Login = () => {
     };
   
     return (
-        <div className="login">
+        <div className="login d-flex flex-column">
+            <h2 className='pb-5'>Login</h2>
             <form onSubmit={handleLogin}>
                 <h3>Email:</h3>
                 <input
