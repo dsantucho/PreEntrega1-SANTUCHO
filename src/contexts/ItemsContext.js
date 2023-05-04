@@ -1,4 +1,4 @@
-import React, {createContext, useReducer, useState} from "react";
+import React, {createContext, useReducer, useState,useEffect} from "react";
 //PASOS
 /*
 1 - Crear el contexto con el hook createContext() 
@@ -7,6 +7,7 @@ import React, {createContext, useReducer, useState} from "react";
 4 - props.children o children
 */
 export const ItemsContext = createContext();
+const CART_KEY = "cart";
 
 //crear un contexto para items
 //importante mantener el nombre Provider
@@ -53,7 +54,6 @@ export const ItemsProvider = ({children}) =>{
     const submittedReducer = (state, action) => {
         switch (action.type) {
           case "SUBMIT":
-            console.log('enter to SUBMIT Context')
             return { submitted: true, purchaseID: action.payload.purchaseID };
           case "RESET":
             return { submitted: false, purchaseID: "" };
@@ -68,7 +68,12 @@ export const ItemsProvider = ({children}) =>{
         purchaseID: "",
       });
 
+      useEffect(() => {
+        localStorage.setItem(CART_KEY, JSON.stringify(state));
+      }, [state]);
+
     const methods={state,dispatch,submittedState,submittedDispatch}; //pongo todos los metodos en 1 arr
+
     return(
         <ItemsContext.Provider value = {{methods}}>{children}</ItemsContext.Provider>
     )
