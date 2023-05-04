@@ -14,6 +14,7 @@ import ErrorPage from "./pages/ErrorPage";
 import Cart from "./pages/Cart";
 import Categories from "./pages/Categories";
 import Login from "./pages/Login";
+import SignUp from './pages/SignUp';
 
 //Contexts
 import { ItemsProvider } from "./contexts/ItemsContext"; 
@@ -35,6 +36,7 @@ export const App = () => {
           </div>
           <Routes>
             <Route path="/login" element={<Login/>}/>
+            <Route path='/signup' element={<SignUp/>}/>
             <Route path="/" element={<RequireAuth><Home/></RequireAuth>}/>
 
             <Route path="/category/:category" element={<RequireAuth><Categories/></RequireAuth>}/>
