@@ -62,11 +62,24 @@ export const ItemsProvider = ({children}) =>{
         }
       };
 
-    const [state, dispatch]=useReducer(reducer,[])
+    //const [state, dispatch]=useReducer(reducer,[])
+    const [state, dispatch] = useReducer(reducer, [], () => {
+        const localData = localStorage.getItem(CART_KEY);
+        return localData ? JSON.parse(localData) : [];
+      });
+      
     const [submittedState, submittedDispatch] = useReducer(submittedReducer, {
         submitted: false,
         purchaseID: "",
       });
+
+        // Read from local storage when initializing the state of the cart
+    useEffect(() => {
+        const cartFromStorage = JSON.parse(localStorage.getItem(CART_KEY));
+        if (cartFromStorage) {
+            dispatch({ type: "INITIALIZE", payload: cartFromStorage });
+        }
+    }, []);
 
       useEffect(() => {
         localStorage.setItem(CART_KEY, JSON.stringify(state));

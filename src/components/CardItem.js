@@ -3,12 +3,18 @@ import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import { Link } from "react-router-dom";
 //context
-import { useContext,useState } from "react";
+import { useContext,useState,useEffect } from "react";
 import { ItemsContext } from "../contexts/ItemsContext";
 
 const CardItem = ({ data }) => {
   const { methods } = useContext(ItemsContext);
   const [isAdded, setIsAdded] = useState(false);
+  
+  useEffect(() => {
+    const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+    const found = cartData.some((item) => item.id === data.id);
+    setIsAdded(found);
+  }, [data.id]);
 
   const handleAddToCart = () => {
     methods.dispatch({ type: "ADD", payload: data });
