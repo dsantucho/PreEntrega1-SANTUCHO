@@ -6,13 +6,17 @@ import logoCommerce from "../img/logoEcommerce.png";
 import { Link, useNavigate } from "react-router-dom";
 //context
 import { AuthContext } from '../contexts/AuthContext';
+import { ItemsContext } from "../contexts/ItemsContext";
 
 export const NavBar = () => {
   const navitage = useNavigate()
   const {currentUser,dispatch} = useContext(AuthContext);
+  const { methods } = useContext(ItemsContext); // get the methods from ItemsContext
 
   const handlerLogout = (e)=>{  
     e.preventDefault();
+    // dispatch a new action to ItemsContext reducer to clean the state
+    methods.dispatch({ type: 'CLEAN' }); 
     dispatch({type:"LOGOUT", payload:currentUser})
     navitage("/login")
   }

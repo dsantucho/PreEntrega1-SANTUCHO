@@ -1,5 +1,6 @@
 import React, {createContext, useReducer, useEffect} from "react";
 
+
 const INITIAL_STATE={
     //tomo inicial el que esta en local o null
     currentUser: JSON.parse(localStorage.getItem("user")) || null,
@@ -13,6 +14,7 @@ export const AuthContextProvider = ({children}) =>{
                 case 'LOGIN': 
                     return{ currentUser: action.payload}             
                 case 'LOGOUT':
+                    localStorage.setItem("cart", JSON.stringify([])); // update cart in local storage
                     return {currentUser:null}
                 default: return state;
             }    
