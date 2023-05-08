@@ -1,0 +1,31 @@
+.div-signin{
+    margin-top: 15px;
+    font-size: $font-size-base;
+    font-family: 'Montserrat';
+    .formSignUp{
+        font-size: 1.2rem;
+        font-family: 'Montserrat';
+        width: 75%;
+        button{
+            background-color: $color-neon-pink;
+            border: solid $color-neon-pink;
+            border-radius: 0px;
+            height: 45px;
+            width: 100%;
+            font-size: $font-size-base;
+            font-family: 'Montserrat';
+            color: white;
+            &:hover{
+                color: black;
+                background-color: white;
+            }
+        }
+    }
+    div{
+        input{
+            font-size: 1.3rem;
+            font-family: 'Montserrat'; 
+            font-weight: 600;
+        }
+    }
+}

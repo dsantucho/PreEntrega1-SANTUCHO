@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState,useEffect } from 'react';
 //context:
 import { ItemsContext } from '../contexts/ItemsContext';
 
@@ -7,6 +7,12 @@ const CardItemDetail = ({ data }) => {
   const {methods} = useContext(ItemsContext);
   const [currentQuantity,setCurrentQuantity] = useState(1)// use useState to store data
   const [isAdded, setIsAdded] = useState(false)
+
+  useEffect(() => {
+    const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+    const found = cartData.some((item) => item.id === data.id);
+    setIsAdded(found);
+  }, [data.id]);
   //voy a hacer 2 funciones increase y decrease modificando el valor de quantity
   //estas dos funciones las voy a pasar en el 'onClick' 
   const handleIncrease = () => {

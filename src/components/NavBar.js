@@ -1,11 +1,26 @@
-import React from "react";
+import React, {useContext} from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Dropdown } from "react-bootstrap";
 import CartWidget from "./CartWidget";
 import logoCommerce from "../img/logoEcommerce.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+//context
+import { AuthContext } from '../contexts/AuthContext';
+import { ItemsContext } from "../contexts/ItemsContext";
 
 export const NavBar = () => {
+  const navitage = useNavigate()
+  const {currentUser,dispatch} = useContext(AuthContext);
+  const { methods } = useContext(ItemsContext); // get the methods from ItemsContext
+
+  const handlerLogout = (e)=>{  
+    e.preventDefault();
+    // dispatch a new action to ItemsContext reducer to clean the state
+    methods.dispatch({ type: 'CLEAN' }); 
+    dispatch({type:"LOGOUT", payload:currentUser})
+    navitage("/login")
+  }
+
   return (
     <nav className="d-flex col-12" id="navBar">
       <div className="d-flex col-5 align-items-center">
@@ -14,7 +29,11 @@ export const NavBar = () => {
           <h1 className="ps-5">Pixel Fashion</h1>
         </Link>
       </div>
+      {currentUser? (
       <div className="container d-flex col-7 justify-content-end align-items-center">
+        <ul className="ul-logout">
+          <button className="btn-logout" onClick={handlerLogout}>Logout</button>
+        </ul>
         <ul>
           <Link to="/">Home</Link>
         </ul>
@@ -36,11 +55,16 @@ export const NavBar = () => {
           </Dropdown.Menu>
         </Dropdown>
         </ul>
-
         <ul>
             <CartWidget />
         </ul>
-      </div>
+      </div>):(
+      <div className="container d-flex col-7 justify-content-end align-items-center">
+        <ul className="pe-5">
+          <Link to="/signup">Sign up</Link>
+        </ul>
+      </div>)}
+
     </nav>
   );
 };

@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app"; //permite inicializar nuestra app de firebase
 import { getFirestore } from "firebase/firestore"; // esto es para trabajar con firestore en nuestro caso tiene las img
+import { getAuth} from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBbcrOpfH9PYC7uMIbA-v_lKjUKqP9kkCk",
@@ -16,3 +17,4 @@ const app = initializeApp(firebaseConfig);
 //crear const que por convencion de llama "db"
 // db es el objeto que nosotros vamos a querer utilizar => exportar para utilizar dentro del project
 export const db = getFirestore(app);
+export const auth = getAuth();
