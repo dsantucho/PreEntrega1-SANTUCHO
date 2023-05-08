@@ -1,4 +1,4 @@
-import React, {createContext, useReducer, useState,useEffect} from "react";
+import React, {createContext, useReducer,useEffect} from "react";
 //PASOS
 /*
 1 - Crear el contexto con el hook createContext() 
